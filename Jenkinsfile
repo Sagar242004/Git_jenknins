@@ -1,10 +1,17 @@
-pipeline{
-	agent any
-	stages{
-		stage("Build"){
-			steps{
-				echo "Building"
-			}
-		}
-	}
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                sh 'javac Student.java'
+            }
+        }
+
+        stage('Run') {
+            steps {
+                sh 'java Student'
+            }
+        }
+    }
 }
